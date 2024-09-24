@@ -6,6 +6,26 @@
     <title>Library</title>
   </head>
   <body>
+    <dialog>
+      <button id="close-dialog">Close</button>
+      <form action="#" method="dialog">
+        <label for="book-title">Title</label>
+        <input type="text" name="" id="book-title" />
+
+        <label for="book-author">Author</label>
+        <input type="text" name="" id="book-author" />
+
+        <label for="book-pages">Pages</label>
+        <input type="number" name="" id="book-pages" />
+
+        <label for="book-read">Read</label>
+        <input type="checkbox" name="" id="book-read" />
+
+        <button>Add Book</button>
+      </form>
+    </dialog>
+
+    <button id="open-dialog">Add Book</button>
     <div id="library"></div>
     <script src="library.js"></script>
   </body>

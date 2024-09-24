@@ -25,3 +25,14 @@ function render() {
 }
 
 render();
+
+const dialog = document.querySelector("dialog");
+const openDialog = document.querySelector("#open-dialog");
+openDialog.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+const closeDialog = document.querySelector("#close-dialog");
+closeDialog.addEventListener("click", () => {
+  dialog.close();
+});
