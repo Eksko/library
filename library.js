@@ -4,8 +4,8 @@ function Book(title) {
   this.title = title;
 }
 
-function addBookToLibrary(book, target) {
-  target.push(book);
+function addBookToLibrary(book, library) {
+  library.push(book);
 }
 
 const book = new Book("The Lord of the Rings");
@@ -14,4 +14,14 @@ const anotherBook = new Book("The Hobbit");
 addBookToLibrary(book, library);
 addBookToLibrary(anotherBook, library);
 
-console.log(library);
+function render() {
+  const container = document.querySelector("#library");
+  for (let book of library) {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.textContent = book.title;
+    container.appendChild(card);
+  }
+}
+
+render();
