@@ -8,24 +8,25 @@
   <body>
     <dialog>
       <button id="close-dialog">Close</button>
-      <form action="#" method="dialog">
+      <form id="book-form">
         <label for="book-title">Title</label>
-        <input type="text" name="" id="book-title" />
+        <input type="text" name="title" id="book-title" />
 
         <label for="book-author">Author</label>
-        <input type="text" name="" id="book-author" />
+        <input type="text" name="author" id="book-author" />
 
         <label for="book-pages">Pages</label>
-        <input type="number" name="" id="book-pages" />
+        <input type="number" name="pages" id="book-pages" />
 
-        <label for="book-read">Read</label>
-        <input type="checkbox" name="" id="book-read" />
+        <label for="book-status">Status</label>
+        <input type="checkbox" name="status" id="book-status" />
 
-        <button>Add Book</button>
+        <button type="submit">Submit</button>
       </form>
     </dialog>
 
-    <button id="open-dialog">Add Book</button>
+    <button id="open-dialog">NEW BOOK</button>
+
     <div id="library"></div>
     <script src="library.js"></script>
   </body>
