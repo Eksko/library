@@ -1,4 +1,24 @@
-const library = [];
+const library = [
+  {
+    title: "The Fellowship of the Ring",
+    author: "J. R. R. Tolkien",
+    pages: 423,
+    status: true,
+  },
+  {
+    title: "The Two Towers",
+    author: "J. R. R. Tolkien",
+    pages: 352,
+    status: true,
+  },
+  {
+    title: "The Return of the King",
+    author: "J. R. R. Tolkien",
+    pages: 416,
+    status: false,
+  },
+  { title: "The Hobbit", author: "J. R. R. Tolkien", pages: 310, status: true },
+];
 
 function Book(title, author, pages, status = false) {
   this.title = title;
@@ -10,12 +30,6 @@ function Book(title, author, pages, status = false) {
 function addBookToLibrary(book, library) {
   library.push(book);
 }
-
-const book = new Book("The Lord of the Rings");
-const anotherBook = new Book("The Hobbit");
-
-addBookToLibrary(book, library);
-addBookToLibrary(anotherBook, library);
 
 function renderLibrary() {
   const template = document.querySelector("#book-template");
