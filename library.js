@@ -47,3 +47,19 @@ const closeDialog = document.querySelector("#close-dialog");
 closeDialog.addEventListener("click", () => {
   dialog.close();
 });
+
+const form = document.querySelector("#book-form");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+  const title = formData.get("title");
+  const author = formData.get("author");
+  const pages = formData.get("pages");
+  const status = formData.get("status") === "on";
+
+  const book = new Book(title, author, pages, status);
+  addBookToLibrary(book, library);
+
+  renderLibrary();
+});
