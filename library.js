@@ -14,17 +14,25 @@ const anotherBook = new Book("The Hobbit");
 addBookToLibrary(book, library);
 addBookToLibrary(anotherBook, library);
 
-function render() {
+function renderLibrary() {
+  const template = document.querySelector("#book-template");
   const container = document.querySelector("#library");
-  for (let book of library) {
-    const card = document.createElement("div");
-    card.classList.add("card");
-    card.textContent = book.title;
-    container.appendChild(card);
-  }
+  container.innerHTML = "";
+
+  library.forEach((book, i) => {
+    const clone = template.content.cloneNode(true);
+
+    clone.querySelector(".title").textContent = book.title;
+    clone.querySelector(".author").textContent = book.author;
+    clone.querySelector(".pages").textContent = book.pages;
+    clone.querySelector(".toggle").dataset.index = i;
+    clone.querySelector(".remove").dataset.index = i;
+
+    container.appendChild(clone);
+  });
 }
 
-render();
+renderLibrary();
 
 const dialog = document.querySelector("dialog");
 const openDialog = document.querySelector("#open-dialog");

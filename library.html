@@ -27,6 +27,16 @@
 
     <button id="open-dialog">NEW BOOK</button>
 
+    <template id="book-template">
+      <div class="book">
+        <h4 class="title">Title</h4>
+        <p class="author">Author</p>
+        <p class="pages">Pages</p>
+        <button data-index="" class="toggle">Toggle status</button>
+        <button data-index="" class="remove btn">Remove</button>
+      </div>
+    </template>
+
     <div id="library"></div>
     <script src="library.js"></script>
   </body>
